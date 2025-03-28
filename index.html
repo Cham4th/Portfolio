@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamath Bandara</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home" target="_self">Chamath Bandara</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="toggle-btn" id="toggleBtn">Dark Mode</button>
+
+
+        </nav>
+    </header>
+
+    <section class="home container" id="home">
+        <div class="intro">
+          <img src="/avatar-2.svg" alt="Avatar" class="home__img" />
+          <h1 class="home__name">Chamath Bandara</h1>
+          <span class="home__education">Undergraduate Software Engineer | Graphic & UI Designer | Video Editor | Live Streaming Producer</span>
+          
+          <div class="home__socials">
+            <a href="https://instagram.com" class="home__social-link" target="_blank">Instagram</a>
+            <a href="https://facebook.com" class="home__social-link" target="_blank">Facebook</a>
+            <a href="https://linkedin.com" class="home__social-link" target="_blank">LinkedIn</a>
+            <a href="https://github.com" class="home__social-link" target="_blank">GitHub</a>
+          </div>
+          
+          <a href="#contact" class="contactme__btn">Hire Me</a>
+        </div>
+      </section>
+      
+      <section class="about container" id="about">
+        <h2 class="section__title">About Me</h2>
+
+        <div class="about__container">
+            <img src="/avatar-2.svg" alt="Avatar" class="about__img">
+
+            <div class="about__data">
+                <div class="about__info">
+                    <p class="about__description">
+                        I'm Chamath Bandara. As a Computer Science and Software Engineering undergraduate, 
+                        I specialize in web and app development, UI/UX design, and various creative roles. 
+                        My skills in programming, videography, and graphic design enable me to deliver innovative solutions. 
+                        I am committed to continuous learning and making meaningful contributions to the tech and media industries.
+                    </p>
+                    <div class="about__cvbtn">
+                        <a href="#" class="btn">Download CV</a>
+                    </div>
+                </div>
+
+                <div class="about__skills grid">
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h3 class="skill__name">Web Development</h3>
+                            <span class="skills__number">90%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage development"></span>
+                        </div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h3 class="skill__name">App Development</h3>
+                            <span class="skills__number">75%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage app"></span>
+                        </div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h3 class="skill__name">UI/UX</h3>
+                            <span class="skills__number">90%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage ui__design"></span>
+                        </div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__titles">
+                            <h3 class="skill__name">Graphic Design</h3>
+                            <span class="skills__number">90%</span>
+                        </div>
+                        <div class="skills__bar">
+                            <span class="skills__percentage graphicdesign"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="services" class="section">
+        <h2 class="section-title">Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3 class="card-title">Web Development</h3>
+                <p class="card-description">Building responsive and SEO-optimized websites with modern tech stacks.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3 class="card-title">UI/UX Design</h3>
+                <p class="card-description">Crafting user-centered designs that ensure a seamless experience.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3 class="card-title">Consulting</h3>
+                <p class="card-description">Offering technical insights and advice to improve web projects and user experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="section">
+        <h2 class="section-title">Resume</h2>
+        <p class="section-description">Here's a glimpse of my journey. <a href="#" class="cta-button">Download Resume</a></p>
+    </section>
+
+    <section id="portfolio" class="section">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">Project 1</div>
+            <div class="portfolio-item">Project 2</div>
+            <div class="portfolio-item">Project 3</div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-description">Let’s connect! I’m always open to new opportunities.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__content container">
+            <div class="footer__left">
+                <p>&copy; 2025 Chamath Bandara | All Rights Reserved</p>
+            </div>
+            <div class="footer__right">
+                <ul class="footer__socials">
+                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="mailto:your.email@example.com">Email</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
