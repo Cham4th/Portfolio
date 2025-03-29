@@ -160,6 +160,8 @@ header {
     transform: scale(1.08);
 }
 
+
+
 .section {
     padding: 80px 20px;
     text-align: center;
@@ -296,6 +298,69 @@ header {
     transition: width 0.6s ease-in-out;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .home__name {
+        font-size: 1.8rem;
+    }
+
+    .about__container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about__img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .section__title {
+        font-size: 2rem;
+    }
+
+    .skills__data {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Toggle Button */
+    #toggleBtn {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+
+    .home__name {
+        font-size: 1.5rem;
+    }
+
+    .about__description {
+        font-size: 1rem;
+    }
+
+    .work-filters {
+        flex-direction: column;
+    }
+
+    .work-item {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+
 /* Custom Skill Progress Colors */
 .development {
     width: 90%;
@@ -315,27 +380,6 @@ header {
 .graphicdesign {
     width: 90%;
     background: linear-gradient(90deg, #6f42c1, #9a68e5);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about__container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about__img {
-        width: 250px;
-        height: 250px;
-    }
-
-    .about__data {
-        text-align: center;
-    }
-
-    .skills__data {
-        text-align: center;
-    }
 }
 
 
@@ -624,6 +668,150 @@ header {
     background: #007BB5;
 }
 
+
+/* Filters */
+.work-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.work-item-blogs {
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.work-item-blogs:hover,
+.work-item-blogs.active {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Work Grid */
+.work-container-blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Work Card */
+.work-card-blogs {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.work-card-blogs:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 168, 232, 0.3);
+}
+
+.work-card-blogs img {
+    width: 100%;
+    border-radius: 8px;
+    transition: 0.4s ease-in-out;
+}
+
+.work-card-blogs:hover .work-img {
+    transform: scale(1.1);
+}
+
+/* Hide non-matching items smoothly */
+.work-card-blogs[style*="display: none"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+/* Overlay Effect */
+.work-mask-blogs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 168, 232, 0.2);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.work-card-blogs:hover .work-mask {
+    opacity: 1;
+}
+
+/* Work Category & Title */
+.work-category-blogs {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #00A8E8;
+    margin: 15px 0;
+}
+
+.work-title-blogs {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* View Button */
+.work-button-blogs {
+    display: inline-block;
+    background: #00A8E8;
+    color: #121212;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.work-button-blogs:hover {
+    background: #fff;
+    color: #00A8E8;
+}
+
+/* Hide extra work cards initially */
+.work-card-blogs.hidden {
+    display: none;
+}
+
+/* View More Button */
+.view-more-blogs-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.view-more-blogs-btn {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.view-more-blogs-btn:hover {
+    background: #007BB5;
+}
+
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -660,6 +848,13 @@ button {
 button:hover {
     background-color: #007BB5;
 }
+
+
+
+
+
+
+
 
 /* General Footer Styles */
 .footer {
@@ -743,26 +938,6 @@ button:hover {
     transform: scaleX(1);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .footer__content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer__right {
-        margin-top: 1rem;  /* Adjusted margin */
-    }
-
-    .footer__socials {
-        flex-wrap: wrap;
-        gap: 1.25rem;  /* Reduced gap on mobile */
-    }
-
-    .footer__contact {
-        margin-top: 1rem;  /* Adjusted margin for contact section */
-    }
-}
 
 
 /* Light Theme */
@@ -811,18 +986,3 @@ body.light-theme .cta-button:hover {
     }
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .service-cards {
-        flex-direction: column;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
-}
