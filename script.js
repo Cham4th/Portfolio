@@ -42,3 +42,6 @@ scrollRight.addEventListener('click', () => {
     clearInterval(autoScrollInterval);
     startAutoScroll();
 });
+
+
+

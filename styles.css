@@ -85,7 +85,7 @@ header {
 }
 
 .nav-links a:hover {
-    color: #6c63ff;
+    color:  #007BB5;
 }
 
 .home {
@@ -151,7 +151,7 @@ header {
 }
 
 .home__social-link:hover {
-    color: hsl(43, 100%, 68%);
+    color: #007BB5;
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -339,13 +339,108 @@ header {
 }
 
 
+
+
+.resume-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Timeline Section */
+.timeline {
+    width: 80%;
+    max-width: 800px;
+    background: rgba(51, 51, 51, 0.5); /* Glassmorphism effect */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 168, 232, 0.3);
+    
+}
+
+.timeline-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+    text-align: left;
+    border-bottom: 2px solid #00D4FF;
+    padding-bottom: 5px;
+}
+
+/* Timeline Items */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.timeline-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.icon {
+    font-size: 2rem;
+    color: #00D4FF;
+    background: rgba(0, 212, 255, 0.2);
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.timeline-item:hover .icon {
+    background: rgba(0, 212, 255, 0.4);
+    transform: rotate(10deg);
+}
+
+.timeline-content {
+    text-align: left;
+    flex: 1;
+}
+
+.item-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.item-year {
+    font-size: 1rem;
+    color: #00D4FF;
+    font-weight: 500;
+}
+
+.item-desc {
+    font-size: 1rem;
+    color: #ddd;
+    opacity: 0.9;
+}
+
 /* Services Section */
 .service-cards {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-top: 40px;
-}
+    
+
 
 .card {
     background-color: #333;
@@ -356,11 +451,15 @@ header {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transform: scale(1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
 }
 
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 168, 232, 0.3);
 }
 
 .card-icon {
@@ -378,23 +477,151 @@ header {
     font-size: 16px;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+
+/* Portfolio Section */
+
+
+/* Filters */
+.work-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.portfolio-item {
-    background-color: #333;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+.work-item {
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.portfolio-item:hover {
+.work-item:hover,
+.work-item.active {
+    background: #0056b3;
     transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Work Grid */
+.work-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Work Card */
+.work-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 168, 232, 0.3);
+}
+
+.work-card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: 0.4s ease-in-out;
+}
+
+.work-card:hover .work-img {
+    transform: scale(1.1);
+}
+
+/* Hide non-matching items smoothly */
+.work-card[style*="display: none"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+/* Overlay Effect */
+.work-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 168, 232, 0.2);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.work-card:hover .work-mask {
+    opacity: 1;
+}
+
+/* Work Category & Title */
+.work-category {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #00A8E8;
+    margin: 15px 0;
+}
+
+.work-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* View Button */
+.work-button {
+    display: inline-block;
+    background: #00A8E8;
+    color: #121212;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.work-button:hover {
+    background: #fff;
+    color: #00A8E8;
+}
+
+/* Hide extra work cards initially */
+.work-card.hidden {
+    display: none;
+}
+
+/* View More Button */
+.view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.view-more-btn {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background: #007BB5;
 }
 
 .contact-form {
@@ -420,7 +647,7 @@ input:focus, textarea:focus {
 }
 
 button {
-    background-color: #6c63ff;
+    background-color:#333;
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
@@ -431,7 +658,7 @@ button {
 }
 
 button:hover {
-    background-color: #5a54e0;
+    background-color: #007BB5;
 }
 
 /* General Footer Styles */
